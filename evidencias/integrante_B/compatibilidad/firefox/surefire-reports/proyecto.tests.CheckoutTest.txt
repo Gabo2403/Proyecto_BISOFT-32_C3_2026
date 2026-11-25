@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: proyecto.tests.CheckoutTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 38.59 s <<< FAILURE! -- in proyecto.tests.CheckoutTest
+proyecto.tests.CheckoutTest.compraConUsuarioConErrores -- Time elapsed: 13.80 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.cssSelector: [data-test='complete-header'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '27.2.1', java.version: '27.0.1.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 161.0, moz:accessibilityChecks: false, moz:buildID: 20261118180411, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 27.2.0, moz:processID: 10046, moz:profile: /var/folders/n6/58t34_9j4j9..., moz:shutdownTimeout: 73000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 49f5d894-165a-4855-b3a5-a514324690ac
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at proyecto.pages.BasePage.textoDe(BasePage.java:53)
+	at proyecto.pages.CheckoutPage.mensajeDeConfirmacion(CheckoutPage.java:68)
+	at proyecto.tests.CheckoutTest.compraConUsuarioConErrores(CheckoutTest.java:95)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:583)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+
