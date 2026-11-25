@@ -1,0 +1,134 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< proyecto:proyecto-pruebas >----------------------
+[INFO] Building proyecto-pruebas 1.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Loaded 24632 auto-discovered prefixes for remote repository central (prefixes-central.txt)
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ proyecto-pruebas ---
+[INFO] skip non existing resourceDirectory /Users/carlosquesadaramirez/Desktop/Proyecto_BISOFT-32_C3_2026/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.16.0:compile (default-compile) @ proyecto-pruebas ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ proyecto-pruebas ---
+[INFO] Copying 5 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.16.0:testCompile (default-testCompile) @ proyecto-pruebas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ proyecto-pruebas ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running proyecto.tests.CheckoutTest
+[ERROR] Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 38.59 s <<< FAILURE! -- in proyecto.tests.CheckoutTest
+[ERROR] proyecto.tests.CheckoutTest.compraConUsuarioConErrores -- Time elapsed: 13.80 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.cssSelector: [data-test='complete-header'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '27.2.1', java.version: '27.0.1.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 161.0, moz:accessibilityChecks: false, moz:buildID: 20261118180411, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 27.2.0, moz:processID: 10046, moz:profile: /var/folders/n6/58t34_9j4j9..., moz:shutdownTimeout: 73000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 49f5d894-165a-4855-b3a5-a514324690ac
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at proyecto.pages.BasePage.textoDe(BasePage.java:53)
+	at proyecto.pages.CheckoutPage.mensajeDeConfirmacion(CheckoutPage.java:68)
+	at proyecto.tests.CheckoutTest.compraConUsuarioConErrores(CheckoutTest.java:95)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:583)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+
+[INFO] Running proyecto.tests.InventoryTest
+[ERROR] Tests run: 9, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 42.17 s <<< FAILURE! -- in proyecto.tests.InventoryTest
+[ERROR] proyecto.tests.InventoryTest.errorUserAgregaProducto -- Time elapsed: 16.44 s <<< ERROR!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.cssSelector: [data-test='remove-sauce-labs-bolt-t-shirt'] (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at proyecto.pages.BasePage.clicHastaQue(BasePage.java:48)
+	at proyecto.pages.InventoryPage.clicAgregar(InventoryPage.java:114)
+	at proyecto.tests.InventoryTest.errorUserAgregaProducto(InventoryTest.java:81)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:583)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: [data-test='remove-sauce-labs-bolt-t-shirt']
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '27.2.1', java.version: '27.0.1.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [e87f7b11-fd99-49a9-9e69-d52163e7651e, findElement {value=[data-test='remove-sauce-labs-bolt-t-shirt'], using=css selector}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 161.0, moz:accessibilityChecks: false, moz:buildID: 20261118180411, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 27.2.0, moz:processID: 10540, moz:profile: /var/folders/n6/58t34_9j4j9..., moz:shutdownTimeout: 73000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: e87f7b11-fd99-49a9-9e69-d52163e7651e
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:168)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 6 more
+
+[INFO] Running proyecto.tests.LoginTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.01 s -- in proyecto.tests.LoginTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   CheckoutTest.compraConUsuarioConErrores:95 » Timeout Expected condition failed: waiting for visibility of element located by By.cssSelector: [data-test='complete-header'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '27.2.1', java.version: '27.0.1.1'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 161.0, moz:accessibilityChecks: false, moz:buildID: 20261118180411, moz:geckodriverVersion: 0.37.1, moz:headless: false, moz:platformVersion: 27.2.0, moz:processID: 10046, moz:profile: /var/folders/n6/58t34_9j4j9..., moz:shutdownTimeout: 73000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 49f5d894-165a-4855-b3a5-a514324690ac
+[ERROR]   InventoryTest.errorUserAgregaProducto:81 » Timeout Expected condition failed: waiting for presence of element located by: By.cssSelector: [data-test='remove-sauce-labs-bolt-t-shirt'] (tried for 10 second(s) with 500 milliseconds interval)
+[INFO] 
+[ERROR] Tests run: 25, Failures: 0, Errors: 2, Skipped: 0
+[INFO] 
+[ERROR] 
+
+See /Users/carlosquesadaramirez/Desktop/Proyecto_BISOFT-32_C3_2026/target/surefire-reports for the individual test results.
+See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[INFO] 
+[INFO] >>> surefire-report:3.5.2:report (default) > [surefire]test @ proyecto-pruebas >>>
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ proyecto-pruebas ---
+[INFO] skip non existing resourceDirectory /Users/carlosquesadaramirez/Desktop/Proyecto_BISOFT-32_C3_2026/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.16.0:compile (default-compile) @ proyecto-pruebas ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ proyecto-pruebas ---
+[INFO] Copying 5 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.16.0:testCompile (default-testCompile) @ proyecto-pruebas ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ proyecto-pruebas ---
+[INFO] Skipping execution of surefire because it has already been run for this configuration
+[INFO] 
+[INFO] <<< surefire-report:3.5.2:report (default) < [surefire]test @ proyecto-pruebas <<<
+[INFO] 
+[INFO] 
+[INFO] --- surefire-report:3.5.2:report (default) @ proyecto-pruebas ---
+[INFO] Rendering content with org.apache.maven.skins:maven-fluido-skin:jar:2.0.0-M9 skin
+[WARNING] Unable to locate Test Source XRef to link to -- DISABLED
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:47 min
+[INFO] Finished at: 2026-11-25T16:01:23-06:00
+[INFO] ------------------------------------------------------------------------

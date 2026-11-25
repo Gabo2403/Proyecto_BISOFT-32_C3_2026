@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: proyecto.tests.CheckoutTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 29.75 s <<< FAILURE! -- in proyecto.tests.CheckoutTest
+proyecto.tests.CheckoutTest.compraConUsuarioConErrores -- Time elapsed: 12.34 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.cssSelector: [data-test='complete-header'] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '27.2.1', java.version: '27.0.1.1'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 158.0.4370.33, fedcm:accounts: true, goog:processID: 15758, ms:edgeOptions: {debuggerAddress: localhost:57723}, msedge: {msedgedriverVersion: 158.0.4370.33 (56b8f6918200..., userDataDir: /var/folders/n6/58t34_9j4j9...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:57723/devtoo..., se:cdpVersion: 158.0.4370.33, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int..., webauthn:extension:cmtgKey: true, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b2ea2c856e471abb971b745c1a2f12d4
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at proyecto.pages.BasePage.textoDe(BasePage.java:53)
+	at proyecto.pages.CheckoutPage.mensajeDeConfirmacion(CheckoutPage.java:68)
+	at proyecto.tests.CheckoutTest.compraConUsuarioConErrores(CheckoutTest.java:95)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:583)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+
