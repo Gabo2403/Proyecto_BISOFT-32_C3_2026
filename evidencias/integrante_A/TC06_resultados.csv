@@ -1,0 +1,6 @@
+ejecucion,tiempo_ms,criterio_menor_3000_ms,navegador,metodo
+1,5118,false,Chrome 158.0.8127.88,"System.nanoTime: antes de click Login hasta Products visible"
+2,5114,false,Chrome 158.0.8127.88,"System.nanoTime: antes de click Login hasta Products visible"
+3,5129,false,Chrome 158.0.8127.88,"System.nanoTime: antes de click Login hasta Products visible"
+4,5107,false,Chrome 158.0.8127.88,"System.nanoTime: antes de click Login hasta Products visible"
+5,5123,false,Chrome 158.0.8127.88,"System.nanoTime: antes de click Login hasta Products visible"

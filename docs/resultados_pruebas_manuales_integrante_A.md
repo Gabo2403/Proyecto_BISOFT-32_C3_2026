@@ -3,8 +3,8 @@
 ## Alcance de la ejecución
 
 - Aplicación evaluada: Swag Labs.
-- Modalidad: pruebas manuales.
-- Navegador informado: Google Chrome.
+- Modalidad: pruebas manuales y medición automatizada temporal de TC06 con Selenium.
+- Navegador: Google Chrome 158.0.8127.88 para la medición automatizada de TC06; Google Chrome sobre Windows para las observaciones manuales.
 - Sistema operativo informado: Windows.
 - Casos incluidos: TC06, TC10, TC11 y TC13.
 - Fuente de resultados: observaciones reales proporcionadas por el integrante A.
@@ -15,8 +15,8 @@ No se modificó el Excel ni se completaron sus columnas de Estado o Defecto rela
 
 | Caso | Resultado esperado del Excel | Resultado observado | Evaluación |
 |---|---|---|---|
-| TC06 | Acceder al inventario con «Products» en menos de 3 segundos. | El acceso con `performance_glitch_user` fue exitoso y presentó una demora considerable. DevTools registró 5013 ms de scripting. | **Veredicto pendiente.** Se comprobó la parte funcional, pero 5013 ms de scripting no equivale al tiempo transcurrido entre Login y la visualización del inventario. |
-| TC10 | Mostrar All Items, About, Logout y Reset App State. | Se mostraron las cuatro opciones esperadas y también Dynamic Catalog. | **Cumple el mínimo esperado, con observación pendiente.** El Excel no aclara si la lista debe ser exacta o si admite opciones adicionales. |
+| TC06 | Acceder al inventario con «Products» en menos de 3 segundos. | Cinco mediciones Selenium de extremo a extremo: 5118, 5114, 5129, 5107 y 5123 ms. | **Falló respecto al criterio del caso.** Las cinco ejecuciones superaron 3000 ms. El límite sigue sin estar definido en RF-01. |
+| TC10 | Mostrar All Items, About, Logout y Reset App State. | Se mostraron las cuatro opciones esperadas y también Dynamic Catalog. | **Pasó con observación.** La interpretación literal exige presencia, no exclusividad. Dynamic Catalog queda pendiente de aprobación de alcance y no se clasifica como defecto confirmado. |
 | TC11 | Tras Reset App State, el contador desaparece y el botón vuelve a «Add to cart». | El contador desapareció y el carrito quedó vacío, pero el botón permaneció como «Remove». | **Falló.** Una de las dos condiciones explícitas no se cumplió. |
 | TC13 | Mostrar «Sauce Labs Backpack», «$29.99» y regresar al listado con Back to products. | Se verificaron nombre, imagen, descripción, precio de $29.99, Add to cart y Back to products; se regresó al inventario. | **Pasó.** Se cumplieron las comprobaciones exigidas por el resultado esperado. |
 
@@ -31,17 +31,32 @@ No se modificó el Excel ni se completaron sus columnas de Estado o Defecto rela
 
 **Resultado observado**
 
-El inicio de sesión fue exitoso y se accedió al inventario. Durante la interacción se percibió una demora considerable. La captura de rendimiento de Chrome DevTools registró **5013 ms de scripting**.
+El inicio de sesión fue exitoso en cinco ejecuciones independientes y en todas se observó el título «Products». La medición se ejecutó con Selenium 4.27.0 y Chrome 158.0.8127.88 en modo headless.
+
+El cronómetro se implementó con `System.nanoTime()`: comenzó inmediatamente antes de `click()` sobre Login y terminó cuando una espera explícita confirmó que el título era visible y su texto exacto era «Products».
+
+| Ejecución | Tiempo (ms) | ¿Menor de 3000 ms? |
+|---:|---:|---|
+| 1 | 5118 | No |
+| 2 | 5114 | No |
+| 3 | 5129 | No |
+| 4 | 5107 | No |
+| 5 | 5123 | No |
+| **Promedio** | **5118,2** | **No** |
+| **Mínimo** | **5107** | **No** |
+| **Máximo** | **5129** | **No** |
+
+La captura manual anterior de Chrome DevTools registró **5013 ms de scripting**. Ese dato se conserva como observación histórica, pero no se usa como sustituto de las nuevas mediciones de extremo a extremo.
 
 **Contraste con el resultado esperado**
 
-- Acceso exitoso al inventario: comprobado.
-- Título «Products»: el acceso al inventario fue informado, pero no se proporcionó una medición separada del instante en que el título se hizo visible.
-- Tiempo total menor de 3 segundos: no comprobable con la medición disponible.
+- Acceso exitoso al inventario: comprobado en las cinco ejecuciones.
+- Título «Products» visible: comprobado como condición de fin en las cinco ejecuciones.
+- Tiempo total menor de 3 segundos: no cumplido en las cinco ejecuciones.
 
 **Evaluación**
 
-**Veredicto pendiente.** Los 5013 ms corresponden al tiempo de scripting mostrado por DevTools y no deben reinterpretarse como duración total desde presionar Login hasta acceder al inventario. Para decidir el umbral se necesita una medición de extremo a extremo con inicio y fin definidos.
+**Falló respecto al criterio existente de TC06.** Ninguna ejecución fue menor de 3000 ms. Esta conclusión evalúa el caso tal como está escrito; no elimina la brecha de trazabilidad porque RF-01 no define un requisito de rendimiento.
 
 **Brecha para incorporar al Excel**
 
@@ -69,7 +84,7 @@ Las cuatro opciones indicadas en el Excel estaban presentes. Además, apareció 
 
 **Evaluación**
 
-**Cumple el mínimo esperado, con observación pendiente.** No se asigna Falló porque el texto actual solo exige que aparezcan cuatro opciones y no dice “exactamente”. Tampoco se cierra como conformidad total hasta que el responsable defina si las opciones adicionales son válidas.
+**Pasó con observación.** El texto actual exige que aparezcan las cuatro opciones y no dice “exactamente”, por lo que el resultado literal se cumplió. Dynamic Catalog permanece como observación de alcance pendiente de aprobación por el equipo y no se clasifica como defecto confirmado.
 
 **Brecha para incorporar al Excel**
 
@@ -134,7 +149,7 @@ El Excel exige el nombre «Sauce Labs Backpack», el precio «$29.99» y el regr
 
 Se vinculan únicamente las capturas conservadas en la selección definitiva:
 
-- **TC06:** [captura de rendimiento](../evidencias/integrante_A/TC06_03_Performance.png). Permite comprobar la presencia de DevTools y el inventario, pero no convierte los 5013 ms de scripting en tiempo total de login.
+- **TC06:** [datos de las cinco mediciones](../evidencias/integrante_A/TC06_resultados.csv); capturas de [ejecución 1](../evidencias/integrante_A/TC06_ejecucion_01.png), [ejecución 2](../evidencias/integrante_A/TC06_ejecucion_02.png), [ejecución 3](../evidencias/integrante_A/TC06_ejecucion_03.png), [ejecución 4](../evidencias/integrante_A/TC06_ejecucion_04.png) y [ejecución 5](../evidencias/integrante_A/TC06_ejecucion_05.png). Se conserva también la [captura manual de rendimiento](../evidencias/integrante_A/TC06_03_Performance.png), cuyos 5013 ms de scripting no se equiparan al tiempo total.
 - **TC10:** [menú lateral](../evidencias/integrante_A/TC10_Menu_Lateral.png), con Dynamic Catalog visible como opción adicional.
 - **TC11:** [antes del reinicio](../evidencias/integrante_A/TC11_01_Antes_Reset.png), [después del reinicio con Remove](../evidencias/integrante_A/TC11_02_Despues_Reset_Remove.png) y [carrito vacío](../evidencias/integrante_A/TC11_03_Carrito_Vacio.png).
 - **TC13:** [detalle del producto](../evidencias/integrante_A/TC13_01_Detalle.png) y [regreso al inventario](../evidencias/integrante_A/TC13_02_Regreso_Inventario.png).
@@ -143,8 +158,8 @@ No se mencionan capturas eliminadas ni se infieren mediciones adicionales a part
 
 ## Cambios que debe realizar el encargado del Excel
 
-1. Mantener TC06 sin veredicto hasta medir el tiempo total con un método aprobado.
-2. Aclarar en RF-04/TC10 si la lista de opciones es exacta o mínima y decidir el tratamiento de Dynamic Catalog.
+1. Registrar TC06 como Falló respecto al umbral actualmente escrito, manteniendo señalado que ese límite no proviene de RF-01.
+2. Registrar TC10 como Pasó con observación y decidir el alcance futuro de Dynamic Catalog sin tratarlo todavía como defecto confirmado.
 3. Registrar el fallo real de TC11 y, si corresponde, crear un defecto con el título sugerido.
 4. Registrar TC13 como Pasó.
 5. Conservar las brechas de cobertura ya documentadas para RF-04/CA3, RF-07/CA3 y RF-09/CA1.

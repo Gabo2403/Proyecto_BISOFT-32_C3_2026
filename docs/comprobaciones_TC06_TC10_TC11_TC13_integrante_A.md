@@ -1,8 +1,8 @@
-# Comprobaciones pendientes para TC06, TC10, TC11 y TC13
+# Guía de comprobación de TC06, TC10, TC11 y TC13
 
 ## Regla de registro
 
-Para cada caso se debe anotar evidencia objetiva y luego comparar con el resultado esperado. No se debe marcar Pasó o Falló hasta ejecutar el caso en un ambiente identificado. Este documento no contiene resultados de ejecución.
+Para cada caso se debe anotar evidencia objetiva y luego comparar con el resultado esperado. Esta guía describe qué comprobar; los resultados reales y sus estados se encuentran en [Resultados de pruebas manuales — Integrante A](resultados_pruebas_manuales_integrante_A.md).
 
 ## TC06 — Login con usuario de bajo rendimiento
 
@@ -30,6 +30,10 @@ Para cada caso se debe anotar evidencia objetiva y luego comparar con el resulta
 **Evidencia disponible**
 
 - [Captura de rendimiento de TC06](../evidencias/integrante_A/TC06_03_Performance.png). Muestra el inventario y Chrome DevTools; los 5013 ms corresponden a scripting y no prueban el tiempo total de extremo a extremo.
+- [Resultados de las cinco mediciones Selenium](../evidencias/integrante_A/TC06_resultados.csv).
+- Capturas posteriores a la visualización de «Products»: [ejecución 1](../evidencias/integrante_A/TC06_ejecucion_01.png), [ejecución 2](../evidencias/integrante_A/TC06_ejecucion_02.png), [ejecución 3](../evidencias/integrante_A/TC06_ejecucion_03.png), [ejecución 4](../evidencias/integrante_A/TC06_ejecucion_04.png) y [ejecución 5](../evidencias/integrante_A/TC06_ejecucion_05.png).
+
+La medición automatizada inició con `System.nanoTime()` inmediatamente antes de activar Login y terminó cuando Selenium observó el título visible con texto exacto «Products». Los tiempos fueron 5118, 5114, 5129, 5107 y 5123 ms en Chrome 158.0.8127.88. Las cinco ejecuciones superaron 3000 ms.
 
 **Advertencia de trazabilidad**
 
@@ -60,6 +64,8 @@ El acceso al inventario es trazable a RF-01. El límite de 3 segundos no aparece
 **Evidencia disponible**
 
 - [Menú lateral de TC10](../evidencias/integrante_A/TC10_Menu_Lateral.png). Se observan All Items, Dynamic Catalog, About, Logout y Reset App State.
+
+Según la interpretación literal del resultado esperado, TC10 **Pasó con observación**: las cuatro opciones exigidas están presentes. Dynamic Catalog se mantiene como observación de alcance pendiente de aprobación y no como defecto confirmado.
 
 **Advertencia de cobertura**
 

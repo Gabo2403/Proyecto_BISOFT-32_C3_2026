@@ -109,7 +109,7 @@ Los diez IDs tienen al menos un caso asociado, pero la revisión estática no pe
 
 Las capturas complementan la revisión, pero no corrigen las ambigüedades del texto ni amplían por sí solas el alcance de los casos:
 
-- RF-01 y el límite no trazado de TC06: [login exitoso](../evidencias/integrante_A/RF01_Login_Exitoso.png) y [captura de rendimiento de TC06](../evidencias/integrante_A/TC06_03_Performance.png).
+- RF-01 y el límite no trazado de TC06: [login exitoso](../evidencias/integrante_A/RF01_Login_Exitoso.png), [captura manual de rendimiento](../evidencias/integrante_A/TC06_03_Performance.png) y [cinco mediciones Selenium](../evidencias/integrante_A/TC06_resultados.csv). Las cinco mediciones superan 3000 ms, pero este resultado de ejecución no corrige la ausencia del límite en RF-01.
 - RF-03: [acceso no autorizado](../evidencias/integrante_A/RF03_Acceso_No_Autorizado.png) y [cierre de sesión](../evidencias/integrante_A/RF03_Cierre_Sesion.png).
 - RF-04: [opciones observadas en TC10](../evidencias/integrante_A/TC10_Menu_Lateral.png), [estado anterior al reinicio](../evidencias/integrante_A/TC11_01_Antes_Reset.png) y [botón Remove después del reinicio](../evidencias/integrante_A/TC11_02_Despues_Reset_Remove.png).
 - RF-05: [detalle comprobado en TC13](../evidencias/integrante_A/TC13_01_Detalle.png).

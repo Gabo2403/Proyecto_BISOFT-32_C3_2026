@@ -23,7 +23,7 @@ Se revisó el vínculo declarado en la columna Requerimiento de los 34 casos y, 
 
 Las evidencias seleccionadas muestran observaciones concretas de ejecución. No sustituyen los casos faltantes ni convierten una cobertura parcial en completa.
 
-- **RF-01:** [login exitoso](../evidencias/integrante_A/RF01_Login_Exitoso.png).
+- **RF-01:** [login exitoso](../evidencias/integrante_A/RF01_Login_Exitoso.png) y [cinco mediciones Selenium de TC06](../evidencias/integrante_A/TC06_resultados.csv). Las cinco superan el umbral del caso, aunque dicho umbral sigue sin trazarse a RF-01.
 - **RF-02:** [usuario obligatorio](../evidencias/integrante_A/RF02_Usuario_Obligatorio.png), [contraseña obligatoria](../evidencias/integrante_A/RF02_Contrasena_Obligatoria.png), [credenciales incorrectas](../evidencias/integrante_A/RF02_Credenciales_Incorrectas.png) y [usuario bloqueado](../evidencias/integrante_A/RF02_Usuario_Bloqueado.png).
 - **RF-03:** [cierre de sesión](../evidencias/integrante_A/RF03_Cierre_Sesion.png) y [acceso no autorizado](../evidencias/integrante_A/RF03_Acceso_No_Autorizado.png).
 - **RF-04:** no quedó una captura con nombre RF-04 en la selección definitiva. Las evidencias de TC10 y TC11 están vinculadas en los documentos específicos de esos casos.
