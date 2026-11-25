@@ -11,11 +11,8 @@ import proyecto.pages.LoginPage;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/** Pasos y verificaciones. SIN localizadores: todo pasa por los métodos de las páginas. */
 class LoginTest extends BaseTest {
 
-    // Una sola prueba, una fila del CSV = un caso (la tabla de decisión del login).
-    // {0} es la primera columna del CSV: el ID y título del caso, por ejemplo "TC01 Usuario vacío".
     @ParameterizedTest(name = "{0}")
     @CsvFileSource(resources = "/login_cases.csv", numLinesToSkip = 1)
     void loginRechazado(String caso, String usuario, String clave, String mensajeEsperado) {
@@ -31,10 +28,30 @@ class LoginTest extends BaseTest {
     @Test
     @DisplayName("TC05 Login exitoso con usuario estándar")
     void loginExitoso() {
+        InventoryPage inventario = new LoginPage(driver).iniciarSesionComo("standard_user");
+
+        assertTrue(inventario.tituloDePagina().equalsIgnoreCase("Products"));
+    }
+
+    @Test
+    @DisplayName("TC08 Cerrar sesión desde el menú")
+    void cerrarSesion() {
+        InventoryPage inventario = new LoginPage(driver).iniciarSesionComo("standard_user");
+
+        LoginPage login = inventario.cerrarSesion();
+
+        assertTrue(login.botonLoginVisible());
+    }
+
+    @Test
+    @DisplayName("TC09 Acceso directo al inventario sin sesión")
+    void accesoSinSesion() {
         LoginPage login = new LoginPage(driver);
 
-        login.iniciarSesion("standard_user", "secret_sauce");
+        login.abrir("/inventory.html");
 
-        assertEquals("Products", new InventoryPage(driver).tituloDePagina());
+        String error = login.textoDelError();
+        assertTrue(error.contains("You can only access"),
+                "Se esperaba un error que pida iniciar sesión, pero fue «" + error + "»");
     }
 }

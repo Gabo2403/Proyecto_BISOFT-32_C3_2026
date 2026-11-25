@@ -21,7 +21,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.Map;
 
-/** Abre y cierra el navegador para CADA test: así cada test es independiente. */
 @ExtendWith(CapturaAlFallar.class)
 public abstract class BaseTest {
 
@@ -46,7 +45,6 @@ public abstract class BaseTest {
             }
             default: {
                 ChromeOptions opciones = new ChromeOptions();
-                // Evita el aviso de "cambiar contraseña" de Chrome, que tapa la página
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("credentials_enable_service", false);
                 prefs.put("profile.password_manager_enabled", false);
@@ -66,7 +64,6 @@ public abstract class BaseTest {
         }
     }
 
-    /** Guarda target/screenshots/<nombre>.png */
     public void capturar(String nombre) {
         try {
             Path carpeta = Paths.get("target", "screenshots");

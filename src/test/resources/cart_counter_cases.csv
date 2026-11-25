@@ -1,0 +1,4 @@
+caso,cantidad,contadorEsperado
+TC18 Carrito con 0 productos,0,0
+TC19 Carrito con 1 producto,1,1
+TC20 Carrito con los 6 productos,6,6

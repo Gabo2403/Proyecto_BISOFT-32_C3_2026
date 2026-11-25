@@ -1,0 +1,4 @@
+caso,nombre,apellido,codigoPostal,mensajeEsperado
+TC23 Checkout sin nombre,"",Perez,30101,First Name is required
+TC24 Checkout sin apellido,Ana,"",30101,Last Name is required
+TC25 Checkout sin código postal,Ana,Perez,"",Postal Code is required

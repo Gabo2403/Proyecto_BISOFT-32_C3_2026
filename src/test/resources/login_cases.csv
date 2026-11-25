@@ -1,5 +1,6 @@
 caso,usuario,clave,mensajeEsperado
-TC01 Usuario vacio,,secret_sauce,Username is required
-TC02 Clave vacia,standard_user,,Password is required
+TC01 Usuario vacío,"",secret_sauce,Username is required
+TC02 Clave vacía,standard_user,"",Password is required
 TC03 Credenciales incorrectas,standard_user,clave_mala,do not match any user
 TC04 Usuario bloqueado,locked_out_user,secret_sauce,locked out
+TC07 Clave en mayúsculas,standard_user,SECRET_SAUCE,do not match any user

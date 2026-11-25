@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/** Lee config.properties. Cualquier valor se puede sobrescribir con -Dclave=valor en la línea de comandos. */
 public final class Config {
 
     private static final Properties PROPS = new Properties();

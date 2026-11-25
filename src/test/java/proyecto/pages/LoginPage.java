@@ -2,8 +2,9 @@ package proyecto.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import proyecto.base.Config;
 
-/** Página de inicio de sesión: localizadores y acciones. SIN asserts. */
 public class LoginPage extends BasePage {
 
     private final By campoUsuario = By.id("user-name");
@@ -21,7 +22,16 @@ public class LoginPage extends BasePage {
         clic(botonLogin);
     }
 
+    public InventoryPage iniciarSesionComo(String usuario) {
+        iniciarSesion(usuario, Config.get("claveComun"));
+        return new InventoryPage(driver);
+    }
+
     public String textoDelError() {
         return textoDe(mensajeError);
+    }
+
+    public boolean botonLoginVisible() {
+        return espera.until(ExpectedConditions.visibilityOfElementLocated(botonLogin)).isDisplayed();
     }
 }

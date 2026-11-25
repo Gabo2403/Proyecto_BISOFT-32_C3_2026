@@ -1,0 +1,5 @@
+caso,opcion,criterio
+TC14 Ordenar por nombre de A a Z,Name (A to Z),nombre_asc
+TC15 Ordenar por nombre de Z a A,Name (Z to A),nombre_desc
+TC16 Ordenar por precio de menor a mayor,Price (low to high),precio_asc
+TC17 Ordenar por precio de mayor a menor,Price (high to low),precio_desc
