@@ -27,6 +27,10 @@ Para cada caso se debe anotar evidencia objetiva y luego comparar con el resulta
 - Tiempo medido y herramienta utilizada.
 - Condiciones del ambiente.
 
+**Evidencia disponible**
+
+- [Captura de rendimiento de TC06](../evidencias/integrante_A/TC06_03_Performance.png). Muestra el inventario y Chrome DevTools; los 5013 ms corresponden a scripting y no prueban el tiempo total de extremo a extremo.
+
 **Advertencia de trazabilidad**
 
 El acceso al inventario es trazable a RF-01. El límite de 3 segundos no aparece en RF-01; debe aprobarse como requisito no funcional o eliminarse del criterio de aprobación de TC06.
@@ -53,6 +57,10 @@ El acceso al inventario es trazable a RF-01. El límite de 3 segundos no aparece
 
 - Una captura del menú abierto donde sean legibles las cuatro opciones.
 
+**Evidencia disponible**
+
+- [Menú lateral de TC10](../evidencias/integrante_A/TC10_Menu_Lateral.png). Se observan All Items, Dynamic Catalog, About, Logout y Reset App State.
+
 **Advertencia de cobertura**
 
 TC10 cubre RF-04/CA1. No cubre RF-04/CA3 porque no activa All Items. Esa navegación necesita un caso adicional.
@@ -77,6 +85,14 @@ TC10 cubre RF-04/CA1. No cubre RF-04/CA3 porque no activa All Items. Esa navegac
 
 - Evidencia previa con contador y botón «Remove».
 - Evidencia posterior con contador ausente y botón «Add to cart» del mismo producto.
+
+**Evidencia disponible**
+
+- [Antes de Reset App State](../evidencias/integrante_A/TC11_01_Antes_Reset.png): el producto está agregado y el botón muestra «Remove».
+- [Después de Reset App State](../evidencias/integrante_A/TC11_02_Despues_Reset_Remove.png): el contador desapareció, pero el botón continúa en «Remove».
+- [Carrito vacío después del reinicio](../evidencias/integrante_A/TC11_03_Carrito_Vacio.png).
+
+La selección disponible documenta la inconsistencia real. No existe una captura posterior con «Add to cart» porque esa condición no se cumplió.
 
 **Límite**
 
@@ -103,6 +119,11 @@ No inferir que el carrito interno quedó vacío únicamente porque desapareció 
 
 - Captura del detalle con nombre y precio.
 - Captura posterior del inventario tras Back to products.
+
+**Evidencia disponible**
+
+- [Detalle de Sauce Labs Backpack](../evidencias/integrante_A/TC13_01_Detalle.png).
+- [Regreso al inventario](../evidencias/integrante_A/TC13_02_Regreso_Inventario.png).
 
 **Límite**
 

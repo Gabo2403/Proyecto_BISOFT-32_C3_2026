@@ -105,3 +105,15 @@ Esta revisión se basa únicamente en las hojas `Trazabilidad` y `Casos` de `Reg
 
 Los diez IDs tienen al menos un caso asociado, pero la revisión estática no permite declarar cobertura completa de criterios. Antes de ejecutar, deben acordarse el alcance de usuarios de RF-01, el requisito de rendimiento detrás de TC06, el catálogo esperado de RF-05 y las reglas de cálculo de RF-09. También deben añadirse comprobaciones directas para RF-04/CA3, RF-07/CA3 y RF-09/CA1.
 
+## Evidencias disponibles relacionadas con los hallazgos
+
+Las capturas complementan la revisión, pero no corrigen las ambigüedades del texto ni amplían por sí solas el alcance de los casos:
+
+- RF-01 y el límite no trazado de TC06: [login exitoso](../evidencias/integrante_A/RF01_Login_Exitoso.png) y [captura de rendimiento de TC06](../evidencias/integrante_A/TC06_03_Performance.png).
+- RF-03: [acceso no autorizado](../evidencias/integrante_A/RF03_Acceso_No_Autorizado.png) y [cierre de sesión](../evidencias/integrante_A/RF03_Cierre_Sesion.png).
+- RF-04: [opciones observadas en TC10](../evidencias/integrante_A/TC10_Menu_Lateral.png), [estado anterior al reinicio](../evidencias/integrante_A/TC11_01_Antes_Reset.png) y [botón Remove después del reinicio](../evidencias/integrante_A/TC11_02_Despues_Reset_Remove.png).
+- RF-05: [detalle comprobado en TC13](../evidencias/integrante_A/TC13_01_Detalle.png).
+- RF-07: [productos agregados](../evidencias/integrante_A/RF07_Productos_Agregados.png), [contenido del carrito](../evidencias/integrante_A/RF07_Contenido_Carrito.png) y [producto eliminado](../evidencias/integrante_A/RF07_Producto_Eliminado.png).
+- RF-08: [nombre obligatorio](../evidencias/integrante_A/RF08_Nombre_Obligatorio.png), [apellido obligatorio](../evidencias/integrante_A/RF08_Apellido_Obligatorio.png) y [código postal obligatorio](../evidencias/integrante_A/RF08_Codigo_Postal_Obligatorio.png).
+- RF-09: [resumen de compra](../evidencias/integrante_A/RF09_Resumen_Compra.png).
+

@@ -132,7 +132,14 @@ El Excel exige el nombre «Sauce Labs Backpack», el precio «$29.99» y el regr
 
 ## Evidencias locales
 
-No se vinculan capturas. En las carpetas locales disponibles del trabajo no se encontraron archivos de imagen que pudieran asociarse correctamente con TC06, TC10, TC11 o TC13. La mención de una captura de rendimiento en TC06 proviene del resultado informado, pero el archivo de esa captura no estaba disponible y no se inventó una ruta.
+Se vinculan únicamente las capturas conservadas en la selección definitiva:
+
+- **TC06:** [captura de rendimiento](../evidencias/integrante_A/TC06_03_Performance.png). Permite comprobar la presencia de DevTools y el inventario, pero no convierte los 5013 ms de scripting en tiempo total de login.
+- **TC10:** [menú lateral](../evidencias/integrante_A/TC10_Menu_Lateral.png), con Dynamic Catalog visible como opción adicional.
+- **TC11:** [antes del reinicio](../evidencias/integrante_A/TC11_01_Antes_Reset.png), [después del reinicio con Remove](../evidencias/integrante_A/TC11_02_Despues_Reset_Remove.png) y [carrito vacío](../evidencias/integrante_A/TC11_03_Carrito_Vacio.png).
+- **TC13:** [detalle del producto](../evidencias/integrante_A/TC13_01_Detalle.png) y [regreso al inventario](../evidencias/integrante_A/TC13_02_Regreso_Inventario.png).
+
+No se mencionan capturas eliminadas ni se infieren mediciones adicionales a partir de las imágenes.
 
 ## Cambios que debe realizar el encargado del Excel
 
