@@ -250,11 +250,9 @@ Estas comprobaciones complementarias no fueron ejecutadas como parte de las audi
 
 Las auditorías del catálogo, carrito y checkout presentaron advertencias de redirección hacia rutas alternativas de Swag Labs.
 
-Las pantallas correspondientes permanecieron visibles después de las auditorías. No obstante, esta observación no elimina la necesidad de comprobar las capturas y los detalles incluidos dentro de los reportes HTML para confirmar la página efectivamente evaluada.
+Se verificaron visualmente las capturas internas de los cuatro reportes HTML, confirmando que corresponden a las pantallas previstas: inicio de sesión, catálogo, carrito y formulario de información del comprador.
 
-Por esta razón, los resultados de Lighthouse deben interpretarse como resultados reportados por la herramienta, sujetos a dicha limitación.
-
-Las incidencias de configuración y las advertencias de las herramientas no deben clasificarse automáticamente como defectos funcionales de Swag Labs.
+Los reportes del catálogo, carrito y checkout también presentaron errores en el análisis detallado de LCP. Estas advertencias se conservan como limitaciones de las auditorías, sin descartar las puntuaciones reportadas por Lighthouse.
 
 ## 9. Evidencias
 
